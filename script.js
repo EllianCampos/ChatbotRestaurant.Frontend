@@ -75,8 +75,10 @@ window.addEventListener('load', async () => {
    const data = await response.json()
    
    for (const order of data) {
+    console.log(order)
     const or = `<div class="pedido" >
-        ${order.description}
+        <p><span class="text-primary">Cliente: </span>${order.orderPersonName}</p>
+        <span>${order.description}</span>
         <br>
         <div class="text-end">
             <button onclick="avanzar(${order.id})" class="btn btn-primary fs-3">
